@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcPi", "CalcPi\CalcPi.csproj", "{9F3D0732-D8B1-4AFB-8700-5ACECA90A9F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F3D0732-D8B1-4AFB-8700-5ACECA90A9F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F3D0732-D8B1-4AFB-8700-5ACECA90A9F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F3D0732-D8B1-4AFB-8700-5ACECA90A9F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F3D0732-D8B1-4AFB-8700-5ACECA90A9F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54CA7F81-1A2F-46E1-8F99-2C6A68564DD3}
+	EndGlobalSection
+EndGlobal
