@@ -1,12 +1,40 @@
-﻿<Window x:Class="CalcPi.MainWindow"
+﻿<Window x:Class="SyncCalcPi.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CalcPi"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        xmlns:cm="clr-namespace:System.ComponentModel;assembly=System"
+        Title="Sync calculation of Pi" 
+        Height="300" Width="600" 
+        FontSize="14">
+
+    <Window.Resources>
+        <cm:BackgroundWorker x:Key="BackgroundWorker"
+            WorkerReportsProgress="True" WorkerSupportsCancellation="True"
+            DoWork="BackgroundWorker_OnDoWork" ProgressChanged="BackgroundWorker_OnProgressChanged"
+            RunWorkerCompleted="BackgroundWorker_OnRunWorkerCompleted"></cm:BackgroundWorker>
+    </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="E_xit" Name="miFileExit" Click="miFileExit_Click"/>
+            </MenuItem>
+
+        </Menu>
+        <ToolBar DockPanel.Dock="Top">
+            <Label Content="Digits of Pi: "></Label>
+            <TextBox Name="tbxDigits" Width="100">1</TextBox>
+            <Button Name="btnCalculate" Click="btnCalculate_Click" IsDefault="True">Calculate</Button>
+            <Button Name="btnCancel" Click="BtnCancel_OnClick"  IsDefault="False">Cancel</Button>
+            <TextBlock VerticalAlignment="Center" Text="    Calculation time: " />
+            <TextBlock VerticalAlignment="Center" Text="" Name="tblCalcTime" />
+        </ToolBar>
+
+        <StatusBar  DockPanel.Dock="Bottom" >
+            <StatusBarItem Name="sbiStatus" >Ready</StatusBarItem>
+            <ProgressBar Name="progressBar" Height="auto" Width="100" />
+        </StatusBar>
+        <TextBox Name="tblkResults" VerticalScrollBarVisibility="Auto" IsReadOnly="True" TextWrapping="Wrap">
+            3
+        </TextBox>
+
+    </DockPanel>
 </Window>
